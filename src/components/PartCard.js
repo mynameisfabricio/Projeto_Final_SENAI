@@ -20,8 +20,8 @@ const PartCard = ({ part, onPress }) => {
         />
 
         <View>
-          <Text style={styles.name}>{part.name}</Text>
-          <Text style={styles.category}>{part.category}</Text>
+          <Text style={styles.name}>{part.nome}</Text>
+          <Text style={styles.category}>{part.categoria}</Text>
         </View>
       </View>
 
