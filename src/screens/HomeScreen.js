@@ -1,16 +1,43 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, SafeAreaView, TextInput } from 'react-native';
-import { partService } from '../services/partService';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, FlatList, SafeAreaView, TextInput, ActivityIndicator } from 'react-native';
+import Api from '../services/Api';
 import PartCard from '../components/PartCard';
 import colors from '../theme/colors';
 
-const HomeScreen = ({ navigation }) => {
-  const parts = partService.getParts();
+export default function HomeScreen({ navigation }){
 
-  const [search, setSearch] = useState('');
+  const [busca, setBusca] = useState('')
+  const [catalogo, setCatalogo] = useState([])
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  const filteredParts = parts.filter(part =>
-    part.name.toLowerCase().includes(search.toLowerCase())
+  const buscarAPI = async () => {
+    setLoading(true)
+
+    try{
+      const response = await Api.get(`/api`)
+      // salvando Api
+      // console.log(response) -> 200 :)
+      setCatalogo(response.data.catalogo)
+    } 
+    catch(error) {
+      setError(true)
+    }
+    finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    // instanciando a função para buscar itens
+    buscarAPI()
+  }, [])
+  
+  if (loading) return <ActivityIndicator size={'large'} color='#0783f7' />
+  if (error) return <Text>Erro ao carregar itens</Text>
+  
+  const filteredParts = catalogo.filter(part =>
+    part.nome.toLowerCase().includes(busca.toLowerCase())
   );
 
   const renderItem = ({ item }) => (
@@ -34,14 +61,14 @@ const HomeScreen = ({ navigation }) => {
         style={styles.search}
         placeholder="Buscar peça..."
         placeholderTextColor={colors.textSecondary}
-        value={search}
-        onChangeText={setSearch}
+        value={busca}
+        onChangeText={setBusca}
       />
 
       <FlatList
         data={filteredParts}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         contentContainerStyle={styles.listContent}
         showsVerticalScrollIndicator={false}
       />
@@ -93,4 +120,3 @@ const styles = StyleSheet.create({
 
 });
 
-export default HomeScreen;
