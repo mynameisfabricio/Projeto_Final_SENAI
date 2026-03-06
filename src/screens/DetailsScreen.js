@@ -11,15 +11,15 @@ const DetailsScreen = ({ route, navigation }) => {
 
       <View style={styles.header}>
         <Ionicons name="construct-outline" size={32} color={colors.primary} />
-        <Text style={styles.title}>{part.name}</Text>
+        <Text style={styles.title}>{part.nome}</Text>
       </View>
 
       <View style={styles.card}>
         <Text style={styles.label}>Categoria</Text>
-        <Text style={styles.info}>{part.category}</Text>
+        <Text style={styles.info}>{part.categoria}</Text>
 
         <Text style={styles.label}>Descrição</Text>
-        <Text style={styles.info}>{part.description}</Text>
+        <Text style={styles.info}>{part.descricao}</Text>
       </View>
 
       <TouchableOpacity
