@@ -1,12 +1,9 @@
-Aqui está tudo em um único código, pronto para copiar e colar direto no arquivo README.md do GitHub:
-
 # 🧩 PartFinder – Catálogo de Peças
 
 Aplicativo mobile desenvolvido como **Projeto Integrador do curso de Desenvolvimento de Sistemas do SENAI**.
 
 O **PartFinder** permite consultar peças técnicas de forma rápida através de um catálogo integrado a uma **API REST**.
-
----
+______________________________
 
 # 👨‍💻 Integrantes
 
@@ -17,7 +14,7 @@ O **PartFinder** permite consultar peças técnicas de forma rápida através de
 
 📅 Ano: **2026**
 
----
+______________________________
 
 # 📱 Sobre o Projeto
 
@@ -44,8 +41,7 @@ Esse sistema pode ser utilizado por:
 - Empresas de manutenção
 - Técnicos industriais
 - Estudantes da área técnica
-
----
+______________________________
 
 # 🎯 Objetivo do Projeto
 
@@ -61,8 +57,7 @@ Desenvolver um aplicativo mobile integrado a uma **API REST** para consulta de p
 - Permitir busca por nome
 - Mostrar detalhes técnicos das peças
 - Demonstrar integração entre frontend e backend
-
----
+______________________________
 
 # 🏗 Arquitetura do Sistema
 
@@ -76,8 +71,7 @@ O sistema segue o modelo **cliente-servidor**, onde o aplicativo mobile consome 
 4. O aplicativo exibe o catálogo  
 5. O usuário seleciona uma peça  
 6. O aplicativo exibe os detalhes da peça  
-
----
+______________________________
 
 # 🛠 Tecnologias Utilizadas
 
@@ -99,8 +93,7 @@ O sistema segue o modelo **cliente-servidor**, onde o aplicativo mobile consome 
 - Expo CLI
 - Android Emulator
 - Visual Studio Code
-
----
+______________________________
 
 # 📂 Estrutura do Projeto
 
@@ -126,9 +119,7 @@ App.js
 index.js
 package.json
 app.json
-
-
----
+______________________________
 
 # 📄 Explicação dos Arquivos
 
@@ -141,16 +132,14 @@ Responsável por:
 - iniciar o aplicativo
 - configurar a barra de status
 - carregar o sistema de navegação
-
----
+______________________________
 
 ## index.js
 
 Arquivo responsável por registrar o aplicativo no ambiente **Expo**.
 
 Ele conecta o componente principal do aplicativo ao sistema.
-
----
+______________________________
 
 ## package.json
 
@@ -163,8 +152,7 @@ Principais bibliotecas utilizadas:
 - Axios
 - React Navigation
 - Expo
-
----
+______________________________
 
 ## Api.js
 
@@ -281,7 +269,7 @@ Exemplo de resposta da API
 }
 🗄 Modelo de Dados (DER)
 PECA
--------------------------
+______________________________
 id (PK)
 codigo
 nome
@@ -329,3 +317,4 @@ Consumo de APIs
 Arquitetura Cliente-Servidor
 
 Organização de projetos React Native
+
